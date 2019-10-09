@@ -1,0 +1,108 @@
+* {
+  font-family: Arial, "Ninbus Sans", sans-serif;
+  font-size: 12pt;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: content-box;
+}
+
+html > body > main > article h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: blue;
+  width: 100%;
+}
+html > body > main > article > div {
+  width: 100%;
+}
+html > body > main > article > div > label {
+  display: inline-block;
+}
+html > body > main > article > div > input {
+  display: inline-block;
+}
+html > body > main > article > div > span {
+  display: none;
+}
+html > body > main > article > div > div {
+  width: 100%;
+  text-align: right;
+}
+html > body > main > article > div > div > button {
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  html > body > main {
+    min-width: 500px;
+  }
+  html > body > main > article {
+    width: 100%;
+  }
+  html > body > main > article h1 {
+    color: green;
+  }
+  html > body > main > article > div > label {
+    width: 100%;
+  }
+  html > body > main > article > div > input {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  body > main > article {
+    width: 100%;
+  }
+  body > main > article > div > label {
+    width: 35%;
+  }
+  body > main > article > div > input {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html > body > main {
+    max-width: 1400px;
+  }
+  html > body > main > article {
+    display: inline-block;
+  }
+  html > body > main > article h1 {
+    color: red;
+  }
+  html > body > main > article > div > label {
+    width: 35%;
+    text-align: right;
+  }
+  html > body > main > article > div > input {
+    width: 65%;
+  }
+}
+@media print {
+  @page {
+    size: A4, portrait;
+    margin: 0 2.5cm;
+  }
+  html > body > main {
+    margin-top: 2.5cm;
+  }
+  html > body > main > article > div > input[type=text] {
+    border: 0px;
+  }
+  html > body > main > article > div > input[type=checkbox] {
+    display: none;
+  }
+  html > body > main > article > div > input[type=checkbox]:checked + span {
+    display: inline-block;
+  }
+  html > body > main > article > div > select {
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+  html > body > main > article > div > div > button {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

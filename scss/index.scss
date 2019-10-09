@@ -1,0 +1,167 @@
+*{
+    font-family: Arial, "Ninbus Sans", sans-serif;
+    font-size: 12pt;
+    margin:0px;
+    padding:0px;
+    box-sizing: content-box;
+}
+html
+>body{
+    >main{
+        >article{
+            h1{
+                font-size: 1.8em;
+                font-weight: bold;
+                color:blue;
+                width:100%; 
+            }
+            >div{
+                width: 100%;
+
+                >label{
+                    display: inline-block;
+                }
+                >input{
+                    display: inline-block;
+                }
+                >span{
+                    display: none;
+                }
+                >div{
+                    width: 100%;
+                    text-align: right;
+                    >button{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    html
+    >body{
+        >main{
+            min-width: 500px;
+            >article{
+                width: 100%;
+                h1{
+                    color: green;
+                }
+                >div{
+                    >label{
+                        width: 100%;
+                    }
+                    >input{
+                        width: 100%;
+                    }
+                    >div{
+                        >button{
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:601px)and (max-width:1023px){
+    body{
+        >main{
+            >article{
+                width: 100%;
+                h1{
+
+                }
+                >div{
+                    >label{
+                        width: 35%;
+                    }
+                    >input{
+                        width: 65%;
+                    }
+                    >div{
+                        >button{
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    html
+    >body{
+        >main{
+            max-width: 1400px;
+            >article{
+                display: inline-block;
+                h1{
+                    color: red;
+                }
+                >div{
+                    >label{
+                        width: 35%;
+                        text-align: right;
+                    }
+                    >input{
+                        width: 65%;
+                    }
+                    >div{
+                        >button{
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+@media print{ //Diseño adaptativo para impresoras
+              @page {
+                  size: A4, portrait;//Tamaño y orientacion, vertical en este caso
+                  margin: 0 2.5cm ;
+              }
+              html>body{
+                  >main{
+                      margin-top: 2.5cm;
+                      >article{
+                          >h1{  
+                          }
+                          >div{
+                              >label{
+                              }
+                              >input{
+                                  &[type="text"]{
+                                      border: 0px;
+                                  }
+                                  &[type="checkbox"]{
+                                      display: none;
+                                      &:checked+span{
+                                          display: inline-block;
+                                      }
+                                      &:not(:checked)+span+span{
+                                          display: inline-block;
+                                      }
+                                  }
+                                 
+                              }
+                              >select{
+                                  border: none;
+                                  -moz-appearance: none;
+                                  -webkit-appearance: none;
+                              }
+                              >div{
+                                  >button{
+                                      display:none;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+}
